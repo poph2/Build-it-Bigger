@@ -10,7 +10,11 @@ public class Joker {
             "Joke 3",
             "Joke 4",
             "Joke 5",
-            "Joke 6"};
+            "Joke 6",
+            "Joke 7",
+            "Joke 8",
+            "Joke 9",
+            "Joke 10"};
 
     public static String getJoke() {
 
@@ -19,6 +23,12 @@ public class Joker {
         Random random = new Random();
 
         int index = random.nextInt(population);
+
+        return jokes[index];
+
+    }
+
+    public static String getJoke(int index) {
 
         return jokes[index];
 
