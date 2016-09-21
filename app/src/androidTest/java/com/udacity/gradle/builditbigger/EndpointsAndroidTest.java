@@ -3,6 +3,8 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.test.AndroidTestCase;
 
+import org.junit.Test;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -16,7 +18,8 @@ public class EndpointsAndroidTest extends AndroidTestCase {
         mContext = getContext();
     }
 
-    public void testVerifyEndpointsAsyncTaskResult() {
+    @Test
+    public void testAsyncTask() {
         String joke = "";
         try {
             JokeGetter jokeTask = new JokeGetter(new JokeGetter.JokeGetterListener() {
@@ -34,5 +37,8 @@ public class EndpointsAndroidTest extends AndroidTestCase {
 
         assertNotNull("Joke fetched from server is null!", joke);
         assertTrue("Joke fetched from server has zero length!", joke.length() > 0);
+
+
+
     }
 }

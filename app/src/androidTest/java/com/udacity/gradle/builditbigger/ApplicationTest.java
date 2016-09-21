@@ -5,6 +5,7 @@ import android.test.ApplicationTestCase;
 
 import org.junit.Test;
 
+
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
@@ -14,7 +15,9 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     }
 
     @Test
-    public void getJoke() {
+    public void test() {
+
+        assertTrue(true);
 
     }
 }
