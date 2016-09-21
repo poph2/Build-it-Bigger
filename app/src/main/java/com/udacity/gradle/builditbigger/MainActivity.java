@@ -57,8 +57,6 @@ public class MainActivity extends ActionBarActivity implements JokeGetter.JokeGe
     }
 
     public void tellJoke(View view) {
-        //Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this, Joker.getJoke(), Toast.LENGTH_SHORT).show();
         startJokeTask();
     }
 
