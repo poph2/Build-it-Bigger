@@ -39,7 +39,7 @@ public class JokeGetter {
             if (myApi == null) {  // Only do this once
                 MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                         new AndroidJsonFactory(), null)
-                        .setRootUrl("https://builditbigger-1097.appspot.com/_ah/api/");
+                        .setRootUrl("https://build-it-bigger-144100.appspot.com/_ah/api/");
                 // end options for devappserver
 
                 myApi = builder.build();

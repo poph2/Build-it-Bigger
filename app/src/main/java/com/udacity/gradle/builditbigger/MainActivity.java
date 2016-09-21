@@ -6,33 +6,26 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.pop.androidjoker.JokerActivity;
-import com.pop.joker.Joker;
 
 import java.util.Random;
 
 
 public class MainActivity extends ActionBarActivity implements JokeGetter.JokeGetterListener{
 
-    Random mJokeIndexRandGen;
-    TextView mInstructionsTextView;
-    Button mTellJokeButton;
-    boolean mStopSpinner;
+    Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mJokeIndexRandGen = new Random();
+        random = new Random();
     }
 
     public void startJokeTask() {
-        new JokeGetter(this).fetchJoke(mJokeIndexRandGen.nextInt(10));
+        new JokeGetter(this).fetchJoke(random.nextInt(10));
     }
 
     @Override
@@ -65,7 +58,7 @@ public class MainActivity extends ActionBarActivity implements JokeGetter.JokeGe
 
     public void tellJoke(View view) {
         //Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, Joker.getJoke(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, Joker.getJoke(), Toast.LENGTH_SHORT).show();
         startJokeTask();
     }
 
@@ -74,9 +67,8 @@ public class MainActivity extends ActionBarActivity implements JokeGetter.JokeGe
     public void jokeGotten(String joke) {
 
         Intent i = new Intent(this, JokerActivity.class);
-        i.putExtra("Joke", joke);
+        i.putExtra(JokerActivity.JOKE_EXTRA, joke);
 
         startActivity(i);
-        mStopSpinner = true;
     }
 }

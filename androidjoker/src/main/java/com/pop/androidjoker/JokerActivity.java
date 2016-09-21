@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class JokerActivity extends AppCompatActivity {
 
+    public static final String JOKE_EXTRA = "joke";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
